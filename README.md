@@ -1,0 +1,2 @@
+# Interoperability-of-Deep-Learning-Model-for-EO-Data-Cubes-across-Spatial-Data-Science-languages
+Code, trained models, and ONNX export workflows for the Master’s thesis Interoperability of Deep Learning Model for Earth Observation Data Cubes across Spatial Data Science Languages. Includes TempCNN experiments across in Python (PyTorch), R (torch), and Julia (Flux), with containerised, reproducible cross-language inference experiments.
