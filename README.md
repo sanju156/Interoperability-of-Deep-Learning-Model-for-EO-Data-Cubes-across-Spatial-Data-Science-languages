@@ -6,8 +6,8 @@ This work focuses on reproducibility and cross-language interoperability of deep
 
 Three native implementations of the same TempCNN architecture are provided:
 
-1. Python (PyTorch) – 
+1. Python – native-models/pytorch
 
-2. R (torch) – 
+2. R  – native-models/rtorch
 
-3. Julia (Flux) – 
+3. Julia – native-models/flux
