@@ -9,25 +9,25 @@ Rußwurm, M., Pelletier, C., Zollner, M., Lefèvre, S., and Körner, M.: BREIZHC
 ## Data Access
 Original dataset and preprocessing code: https://github.com/dl4sits/BreizhCrops
 
-* Geographic region: Brittany, France (NUTS3 level) - covering 27,200 km²
+* Geographic region: Brittany, France (NUTS3 level) - covering 27,200 km² (FRH01-FRH04)
 
-* Data type: HDF5 files containing Sentinel-2 band values with filed ids and crop lables.
+* Data type: HDF5 files containing Sentinel-2 band values with field IDs and crop labels.
 
 * Temporal coverage: 2017 growing season (1 year) – 5 days temporal revisit.
 
 * Each time series was randomly sampled to a fixed length of 45 observations.
 
-* Number of crop classes : 9
+* Number of crop classes: 9
 
-* Input shape for the model: (N × 13 × 45) -> (Batch,Bamds, Sequence length)
+* Input shape for the model: (N × 13 × 45) -> (Batch × Bands × Sequence length)
 
 * Class imbalance visible (barley/wheat dominant vs sunflower/nuts)
 
 
 ## License & Attribution
 
-* The original dataset is publicly available via python package and subject to their data usage policies.
+* The original dataset is publicly available via a Python package and subject to their data usage policies.
 
 * If you use this dataset in your work, please credit:
 BreizhCrops for the crop-type data
-Rußwurm, M., Pelletier, C., Zollner, M., Lefèvre, S., and Körner, M. for the preprocessed dataset and baseline model code.
+Rußwurm, M., Pelletier, C., Zollner, M., Lefèvre, S., and Körner, M., for the preprocessed dataset and baseline model code.
