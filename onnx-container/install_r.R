@@ -23,7 +23,7 @@ for (pkg in names(pkgs)) {
 
 # --- Install additional packages (latest version is fine) ---
 install.packages(c(
-  "progress", "coro", "yardstick", "rsample", "hdf5r"
+  "progress", "coro", "yardstick", "rsample", "hdf5r",
   "MLmetrics", "vcd", "caret", "tibble", "reticulate", 
   "gplots", "gridExtra", "glue", "geometries","rlang", "magrittr","luz"
 ), repos = "https://cloud.r-project.org")
