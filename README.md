@@ -40,15 +40,15 @@ The PyTorch model implementation used in this study is directly adopted from Ru√
 
 The training and validation data used in this work are **not included** here.
 Data access procedures and pre-processing according to language usability are present in:
-* Data access - [references/Dataset.md]
-* Preprocess - [data-preprocess/](data-preprocess)
+* Data access - [references/Dataset.md](references/Dataset.md)
+* Language-based preprocess - [data-preprocess/](data-preprocess)
 
 The original dataset and model code (PyTorch) for crop classification can be found here:  https://github.com/dl4sits/BreizhCrops
 
 ## How to reproduce 
 
 1. Clone the repository
-2. See the **onnx-container/** for running the Docker container, including the necessary scripts, and mounting the data by accessing from BreizhCrops.
+2. See the [onnx-container/](onnx-container) for running the Docker container, including the necessary scripts, and mounting the data by accessing from BreizhCrops.
 3. STAC-ML metadata are documented for each native model.
 
 ## License
