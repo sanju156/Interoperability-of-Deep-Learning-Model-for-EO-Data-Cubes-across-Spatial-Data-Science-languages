@@ -26,9 +26,9 @@ The PyTorch model implementation used in this study is directly adopted from Ru√
 
 # Repository structure
 
-onnx-container/         # Dockerfiles for reproducing the workflow (training, onnx export, eval).
-native-models/          # Trained models (.pt, .bson) with STAC-ML metadata.
-onnx-models/            # Exported ONNX models.
-data-preprocess/        # Dataset preprocess according to language useability.
-result_plots            # Evaluation figures and comparison plots.
+* onnx-container/         # Dockerfiles for reproducing the workflow (training, onnx export, eval).
+* native-models/          # Trained models (.pt, .bson) with STAC-ML metadata.
+* onnx-models/            # Exported ONNX models.
+* data-preprocess/        # Dataset preprocess according to language useability.
+* result_plots            # Evaluation figures and comparison plots.
 
