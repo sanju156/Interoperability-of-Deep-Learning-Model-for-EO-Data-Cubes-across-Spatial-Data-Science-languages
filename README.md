@@ -24,13 +24,13 @@ The repository follows a unified experimental workflow for crop-type classificat
 
 The PyTorch model implementation used in this study is directly adopted from Rußwurm, M., Pelletier, C., Zollner, M., Lefèvre, S., and Körner, M. (2020) for the BreizhCrops crop-type mapping dataset. The same model architecture was reimplemented in R using Torch and in Julia using Flux to enable cross-language comparison. The dataset and original model code (PyTorch) for crop classification can be found here:  https://github.com/dl4sits/BreizhCrops
 
-# Repository structure
+# Repository Structure
 
-* onnx-container/
-  - Dockerfiles for reproducing the workflow (training, onnx export, eval).
-* native-models/
-- Trained models (.pt, .bson) with STAC-ML metadata.
-* onnx-models/            - Exported ONNX models.
-* data-preprocess/        - Dataset preprocess according to language usability.
-* result-plots            - Evaluation figures and comparison plots.
+| Directory         | Description |
+|-------------------|-------------|
+| `onnx-container/` | Dockerfiles for reproducing the full workflow (training, ONNX export, evaluation) |
+| `native-models/`  | Trained native models (.pt, .rds, .bson) with STAC-ML metadata |
+| `onnx-models/`    | Exported ONNX models used for cross-language inference |
+| `data-preprocess/`| Dataset preprocessing scripts organized by language |
+| `result-plots/`   | Evaluation figures and comparison plots |
 
