@@ -6,11 +6,11 @@ This work focuses on the reproducibility and cross-language interoperability of 
 
 Three native implementations of the TempCNN architecture are provided:
 
-1. Python – **native-models/pytorch**
+1. Python – [native-models/pytorch](native-models/pytorch)
 
-2. R  – **native-models/rtorch**
+2. R  – [native-models/rtorch](native-models/rtorch)
 
-3. Julia – **native-models/flux**
+3. Julia – [native-models/flux](native-models/flux)
 
 The repository follows a unified experimental workflow for crop-type classification: Train in one language → export to ONNX → import and infer in another, enabling a systematic comparison of:
 
