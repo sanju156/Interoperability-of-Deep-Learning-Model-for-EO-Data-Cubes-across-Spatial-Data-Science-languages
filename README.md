@@ -40,7 +40,7 @@ The PyTorch model implementation used in this study is directly adopted from Ru√
 
 The training and validation data used in this work are **not included** here.
 Data access procedures and pre-processing according to language usability are present in:
-* Data access - [references/Dataset.md](references/Dataset.md)
+* Data access - [references/DATASET.md](references/DATASET.md)
 * Language-based preprocess - [data-preprocess/](data-preprocess)
 
 The original dataset and model code (PyTorch) for crop classification can be found here:  https://github.com/dl4sits/BreizhCrops
