@@ -52,5 +52,5 @@ The original dataset and model code (PyTorch) for crop classification can be fou
 3. STAC-ML metadata are documented for each native model.
 
 ## License
-MIT License
+MIT License.
 See [LICENSE.](LICENSE)
