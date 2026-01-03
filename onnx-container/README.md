@@ -63,8 +63,24 @@ Eg: srun --partition = gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --tim
         - julia --project=/app/julia -e 'using Pkg; Pkg.status(); using Flux'
         - julia -e 'using CUDA, cuDNN; CUDA.set_runtime_version!(v"12.1"); cuDNN.version()'
 
+
+* R (torch) GPU execution: When running R training with GPU support inside a Singularity container on PALMA II, additional setup is required to allow {torch} to download and access CUDA-enabled binaries (“lantern” files).
+
+        - export TORCH_HOME=/home/s/ssureshk/.local/torch
+        - mkdir -p $TORCH_HOME
+        In R
+        Sys.setenv(TORCH_HOME = Sys.getenv("TORCH_HOME"))
+        Sys.setenv(TORCH_INSTALL_CUDA = "1")
+        library(torch)
+        install_torch()
+        cuda_is_available()
+
+
+
+
+
   
-        - 
+  
 
 
 
