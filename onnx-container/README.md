@@ -19,3 +19,12 @@ onnx-container/
 | `install_r.R` | R deps |
 | `requirements.txt` | Python deps |
 
+## Build and Run the Docker container 
+
+Execute the commands in the onnx-container/ directory:
+
+* docker build -t onnx-repro-base -f Dockerfile.base . (BASE IMAGE)
+  
+* docker build -t onnx-py-julia-train -f onnx-container/Python_Julia_Train_Dockerfile.dockerfile .
+  
+* docker build -t onnx-r-train -f onnx-container/R_Train_Dockerfile.dockerfile .  
