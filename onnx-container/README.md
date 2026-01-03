@@ -21,27 +21,24 @@ onnx-container/
 
 ## Build and Run the Docker container 
 
-Execute the commands in the onnx-container/ directory:
+* Execute the commands in the onnx-container/ directory:
 
-* docker build -t onnx-repro-base -f Dockerfile.base . (BASE IMAGE)
-  
-* docker build -t onnx-py-julia-train -f Python_Julia_Train_Dockerfile.dockerfile .
-  
-* docker build -t onnx-rtrain -f R_Train_Dockerfile.dockerfile .
+       - docker build -t onnx-repro-base -f Dockerfile.base . (BASE IMAGE)
+       - docker build -t onnx-py-julia-train -f Python_Julia_Train_Dockerfile.dockerfile .
+       - docker build -t onnx-rtrain -f R_Train_Dockerfile.dockerfile .
 
-Tag and push the Docker image to the Docker Hub : 
+* Tag and push the Docker image to the Docker Hub : 
 
-* docker tag onnx-py-julia-train <dockerhub_name>/onnx-py-julia-train:v1
-  
-* docker push <dockerhub_name>/onnx-py-julia-train:v1
+       - docker tag onnx-py-julia-train <dockerhub_name>/onnx-py-julia-train:v1
+       - docker push <dockerhub_name>/onnx-py-julia-train:v1
 
-In HPC, connect to the compute node:
+* In HPC, connect to the compute node:
 
-* Load the Singularity module: module load Singularity/1.2.5
+       - Load the Singularity module: module load Singularity/1.2.5
+       - Build the Singularity container by taking the Docker image from the Docker Hub:  singularity build onnx-py-julia-train.sif docker://<dockerhub_name>/onnx-py-julia-train:v1. This creates the .sif file in the working directory.
 
-* Build the Singularity container by taking the Docker image from the Docker Hub:  singularity build onnx-py-julia-train.sif docker://<dockerhub_name>/onnx-py-julia-train:v1. This creates the .sif file in the working directory.
+* Create an interactive job with GPU support and allocate necessary memory:
 
-* Create an interactive job with GPU support and allocate necessary memory
 Eg: srun --partition = gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --time=05:00:00 --pty bash
 
         - Load the Singularity module
