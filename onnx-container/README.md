@@ -50,7 +50,7 @@ Eg: srun --partition=gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --time=
 
 * Singularity runs containers as a non-root user, and the default Julia depot inside the image is read-only.
 
-* Executing the scripts via Jupyter Notebook in the Sigularity Container can't be done due to a non-root user; instead, use .jl scripts.
+* Executing the scripts via Jupyter Notebook in the Sigularity Container can't be done due to a non-root user; instead, use .jl scripts. Whereas in the local machine, you can execute the Jupyter notebook scripts in the Docker container.
 
 * A custom depot in /tmp allows package precompilation and GPU runtime initialisation.
 
