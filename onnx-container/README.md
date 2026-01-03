@@ -71,7 +71,9 @@ Eg: srun --partition=gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --time=
         library(torch)
         install_torch()
         cuda_is_available()
-
+  
+## Docker Workflow
+<img width="931" height="556" alt="image" src="https://github.com/user-attachments/assets/f6a743f4-66f2-46a3-9569-50cff246ba85" />
 
 
 
