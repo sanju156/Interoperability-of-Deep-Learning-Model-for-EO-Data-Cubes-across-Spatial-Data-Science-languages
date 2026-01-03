@@ -25,6 +25,20 @@ Execute the commands in the onnx-container/ directory:
 
 * docker build -t onnx-repro-base -f Dockerfile.base . (BASE IMAGE)
   
-* docker build -t onnx-py-julia-train -f onnx-container/Python_Julia_Train_Dockerfile.dockerfile .
+* docker build -t onnx-py-julia-train -f Python_Julia_Train_Dockerfile.dockerfile .
   
-* docker build -t onnx-r-train -f onnx-container/R_Train_Dockerfile.dockerfile .  
+* docker build -t onnx-rtrain -f R_Train_Dockerfile.dockerfile .
+
+Tag and push the Docker image to the Docker Hub : 
+
+* docker tag onnx-py-julia-train <dockerhub_name>/onnx-py-julia-train:v1
+  
+* docker push <dockerhub_name>/onnx-py-julia-train:v1
+
+In HPC, connect to the compute node:
+
+* Load the Singularity module: module load Singularity/1.2.5
+
+* Build the Singularity container by taking the Docker image from the Docker Hub:  singularity build onnx-py-julia-train.sif docker://<dockerhub_name>/onnx-py-julia-train:v1
+
+
