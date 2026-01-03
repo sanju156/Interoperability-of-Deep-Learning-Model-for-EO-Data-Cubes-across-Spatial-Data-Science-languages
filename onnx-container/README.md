@@ -55,15 +55,13 @@ Eg: srun --partition = gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --tim
 
 * A custom depot in /tmp allows package precompilation and GPU runtime initialisation.
 
-export JULIA_DEPOT_PATH="/tmp/julia_cache:/opt/julia_depot"
-
-mkdir -p /tmp/julia_cache
+        - export JULIA_DEPOT_PATH="/tmp/julia_cache:/opt/julia_depot"
+        - mkdir -p /tmp/julia_cache
 
 * Verify the Julia environment
   
-julia --project=/app/julia -e 'using Pkg; Pkg.status(); using Flux'
-
-julia -e 'using CUDA, cuDNN; CUDA.set_runtime_version!(v"12.1"); cuDNN.version()'
+        - julia --project=/app/julia -e 'using Pkg; Pkg.status(); using Flux'
+        - julia -e 'using CUDA, cuDNN; CUDA.set_runtime_version!(v"12.1"); cuDNN.version()'
 
   
         - 
