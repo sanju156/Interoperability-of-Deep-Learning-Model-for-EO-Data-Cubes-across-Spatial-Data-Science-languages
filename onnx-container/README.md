@@ -39,6 +39,34 @@ In HPC, connect to the compute node:
 
 * Load the Singularity module: module load Singularity/1.2.5
 
-* Build the Singularity container by taking the Docker image from the Docker Hub:  singularity build onnx-py-julia-train.sif docker://<dockerhub_name>/onnx-py-julia-train:v1
+* Build the Singularity container by taking the Docker image from the Docker Hub:  singularity build onnx-py-julia-train.sif docker://<dockerhub_name>/onnx-py-julia-train:v1. This creates the .sif file in the working directory.
+
+* Create an interactive job with GPU support and allocate necessary memory
+Eg: srun --partition = gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --time=05:00:00 --pty bash
+
+        - Load the Singularity module
+        - singularity shell --nv --writable-tmpfs onnx-py-julia-train.sif
+        - Launch the Jupyter notebook (jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token='')
+        - ssh -i "$HOME/.ssh/id_ecdsa_palma" -o MACs=hmac-sha2-256 -L 8890:r10n06(compute node name):8888 <palma_id> which can connect to the jupyter notebook.
+
+* For the Julia GPU setup, execute the commands below inside the container to run the scripts
+
+* Singularity runs containers as a non-root user, and the default Julia depot inside the image is read-only.
+
+* A custom depot in /tmp allows package precompilation and GPU runtime initialisation.
+
+export JULIA_DEPOT_PATH="/tmp/julia_cache:/opt/julia_depot"
+
+mkdir -p /tmp/julia_cache
+
+* Verify the Julia environment
+  
+julia --project=/app/julia -e 'using Pkg; Pkg.status(); using Flux'
+
+julia -e 'using CUDA, cuDNN; CUDA.set_runtime_version!(v"12.1"); cuDNN.version()'
+
+  
+        - 
+
 
 
