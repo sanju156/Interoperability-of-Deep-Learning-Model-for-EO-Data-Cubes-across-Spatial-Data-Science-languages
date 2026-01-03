@@ -34,17 +34,17 @@ onnx-container/
 
 * In HPC, connect to the compute node:
 
-       - Load the Singularity module: module load Singularity/1.2.5
-       - Build the Singularity container by taking the Docker image from the Docker Hub:  singularity build onnx-py-julia-train.sif docker://<dockerhub_name>/onnx-py-julia-train:v1. This creates the .sif file in the working directory.
+       1. Load the Singularity module: module load Singularity/1.2.5
+       2. Build the Singularity container by taking the Docker image from the Docker Hub:  singularity build onnx-py-julia-train.sif docker://<dockerhub_name>/onnx-py-julia-train:v1. This creates the .sif file in the working directory.
 
 * Create an interactive job with GPU support and allocate necessary memory:
 
-Eg: srun --partition = gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --time=05:00:00 --pty bash
+Eg: srun --partition=gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --time=05:00:00 --pty bash
 
-        - Load the Singularity module
-        - singularity shell --nv --writable-tmpfs onnx-py-julia-train.sif
-        - Launch the Jupyter notebook (jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token='')
-        - ssh -i "$HOME/.ssh/id_ecdsa_palma" -o MACs=hmac-sha2-256 -L 8890:r10n06(compute node name):8888 <palma_id> which can connect to the jupyter notebook.
+        1. Load the Singularity module
+        2. singularity shell --nv --writable-tmpfs onnx-py-julia-train.sif
+        3. Launch the Jupyter notebook (jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token='')
+        4. ssh -i "$HOME/.ssh/id_ecdsa_palma" -o MACs=hmac-sha2-256 -L 8890:r10n06(compute node name):8888 <palma_login_id> which can connect to the jupyter notebook.
 
 * For the Julia GPU setup, execute the commands below inside the container to run the scripts
 
@@ -63,7 +63,7 @@ Eg: srun --partition = gpuexpress --gres=gpu:1 --cpus-per-task=4 --mem=32G --tim
 
 * R (torch) GPU execution: When running R training with GPU support inside a Singularity container on PALMA II, additional setup is required to allow {torch} to download and access CUDA-enabled binaries (“lantern” files).
 
-        - export TORCH_HOME=/home/s/ssureshk/.local/torch
+        - export TORCH_HOME=/home/palma_login_name/.local/torch
         - mkdir -p $TORCH_HOME
         In R
         Sys.setenv(TORCH_HOME = Sys.getenv("TORCH_HOME"))
