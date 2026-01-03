@@ -18,7 +18,7 @@
   "properties": {
     "start_datetime": "1900-01-01T00:00:00Z",
     "end_datetime": "9999-01-01T00:00:00Z",
-    "description": "Trained TempCNN model in Python (PyTorch framework). Used to evaluate on model interoperability. Architecture is based on Rußwurm, M., Pelletier, C., Zollner, M., Lefèvre, S., and Körner, M. (2020) for the BreizhCrops crop-type mapping. Reimplemented them in R torch for training in R",
+    "description": "Trained TempCNN model in (R Torch framework). Used to evaluate on model interoperability. Architecture is based on Rußwurm, M., Pelletier, C., Zollner, M., Lefèvre, S., and Körner, M. (2020) for the BreizhCrops crop-type mapping. Reimplemented in R torch for training in R",
     "datetime": null,
     "mlm:framework": "R Torch",
     "mlm:framework_version": "R Torch 0.15.1",
@@ -150,7 +150,8 @@
       "type": "application/json"
     }
   ],
-  "assets": {"model": {
+  "assets": {
+    "model": {
       "href": "./tempcnn-r-model.pt",
       "type": "application/x-pytorch",
       "roles": ["mlm:model"], 
