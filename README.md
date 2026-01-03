@@ -55,3 +55,9 @@ The original dataset and model code (PyTorch) for crop classification can be fou
 MIT License.
 
 See [LICENSE.](LICENSE)
+
+## Citation
+If you use these models or code, please cite:
+          Sanju Shree Suresh Kumar (2025).
+          Interoperability of Deep Learning Model for Earth Observation Data Cubes across Spatial Data Science languages.
+          Master’s Thesis, University of Münster.
